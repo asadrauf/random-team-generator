@@ -20,9 +20,15 @@ const employee = [];
 
 //function that will write into team.html and generate our html file
 function generateHTML(){
+    // If the build directory does not exist
+  if (!fs.existsSync(OUTPUT_DIR)) {
+    // Build "build" directory
+    fs.mkdirSync(OUTPUT_DIR);
+  }else{
   
     fs.writeFileSync(outputPath, render(employee), "utf-8")
   }
+}
 
 //getInfo function will interact with user and ask question related to generate the developer team
 function getInfo(){
@@ -168,4 +174,4 @@ function addEngineer() {
     });
   }
 
-  getInfo()
+  getInfo();
