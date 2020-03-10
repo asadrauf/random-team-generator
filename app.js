@@ -29,6 +29,19 @@ function generateHTML(){
     fs.writeFileSync(outputPath, render(employee), "utf-8")
   }
 }
+const confirmNameValidator = async (input) => {
+    if (input == '') {
+       return 'Please Enter a name';
+    }
+    return true;
+ };
+
+ const validateAge = async(input) =>
+{
+   var reg = /^\d+$/;
+   return reg.test(input) || "ID should be a number!";
+};
+
 
 //getInfo function will interact with user and ask question related to generate the developer team
 function getInfo(){
@@ -73,11 +86,13 @@ function addManager(){
         type: "input",
         name: "managerName",
         message: "What is your manager's name?",
+        validate: confirmNameValidator
     },
     {
         type: "input",
         name: "managerId",
         message: "What is your manager's id?",
+        validate: validateAge
     },
     {
         
@@ -107,13 +122,14 @@ function addEngineer() {
         type: "input",
         name: "engineerName",
         message: "What is your engineer's name?",
+        validate: confirmNameValidator
       
       },
       {
         type: "input",
         name: "engineerId",
         message: "What is your engineer's id?",
-        
+        validate: validateAge
       },
       {
         type: "input",
@@ -144,13 +160,14 @@ function addEngineer() {
         type: "input",
         name: "internName",
         message: "What is your intern's name?",
+        validate: confirmNameValidator
         
       },
       {
         type: "input",
         name: "internId",
         message: "What is your intern's id?",
-        
+        validate: validateAge
       },
       {
         type: "input",
