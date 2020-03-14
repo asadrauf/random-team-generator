@@ -1,4 +1,5 @@
-         
+ ![](team-gene.png)
+ 
 ### random-team-generator ![Maintained](https://img.shields.io/badge/readme-generator-yellowgreen) ![Maintained](https://img.shields.io/badge/UNC-bootCamp-blue)
 
 > ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) #This CLI will generate a Software Engineer Team using javascript OOP concepts. The application will prompt the user for information about the team manager and then information about the team members. The user can input any number of team members, and they may be a mix of engineers and interns. When the user has completed building the team, the application will create an HTML file that displays a nicely formatted team roster based on the information provided by the user.
